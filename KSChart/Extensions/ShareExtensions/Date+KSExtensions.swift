@@ -10,7 +10,7 @@ import Foundation
 
 let KS_Date_Formatter                    = DateFormatter()
 
-public extension Date {
+extension Date {
     
     static func ks_formatTimeStamp(timeStamp:Int,format:String) -> String {
         let confromTimesp            = Date(timeIntervalSince1970: TimeInterval(timeStamp))
@@ -43,5 +43,12 @@ public extension Date {
         KS_Date_Formatter.dateFormat = format
         time                         = KS_Date_Formatter.string(from: confromTimesp)
         return time;
+    }
+    
+    static func ks_toTimeStamp(time: String ,format:String) -> Int {
+        KS_Date_Formatter.dateFormat = format
+        let last = KS_Date_Formatter.date(from: time)
+        let timeStamp = last?.timeIntervalSince1970
+        return Int(timeStamp!)
     }
 }

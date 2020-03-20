@@ -256,6 +256,30 @@ class KSBinanceController: KSBaseViewController {
             
         }
     }
+    
+    func readSongshu() {
+        //三只松鼠
+        //http://q.stock.sohu.com/hisHq?code=cn_300783&start=20190712&end=20200319&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp
+        
+        let fileData = KSFileMgr.readLocalData(fileName: "3songshu", type: "txt")
+        let jsons    = JSON(fileData!)
+        var candles: [KSChartItem] = [KSChartItem]()
+        for json in jsons["hq"].arrayValue {
+            let info    = KSChartItem()
+            info.time   = Date.ks_toTimeStamp(time: json[0].stringValue, format: "YY-MM-dd")// 开盘时间
+            info.open   = json[1].stringValue// 开盘价
+            info.high   = json[6].stringValue// 最高价
+            info.low    = json[5].stringValue// 最低价
+            info.close  = json[2].stringValue// 收盘价(当前K线未结束的即为最新价)
+            info.volume = json[7].stringValue// 成交量
+            candles.append(info)
+        }
+        candles = candles.reversed()
+        self.headerChartView.chartView.klineData.removeAll()
+        self.headerChartView.chartView.resetChart(datas: candles)
+        self.configure.isSwitch = false
+        self.headerChartView.resetDrawChart(isAll: true)
+    }
     //======================================================================
     // MARK: - 14、懒加载
     //======================================================================
@@ -390,10 +414,6 @@ extension KSBinanceController: KSWebSocketDelegate {
     func socketDidFail(_ socket: KSWebSocket!) {
         self.msgMgr.messages.removeAll()
     }
-    
-    func refreshChartKit() {
-        self.headerChartView.resetDrawChart(isAll: self.headerChartView.chartView.chartView.isActiveRefresh(plotCount: self.headerChartView.chartView.klineData.count))
-    }
 }
 
 extension KSBinanceController: KSViewDelegate {
@@ -423,8 +443,7 @@ extension KSBinanceController {
         }
         else{
             self.msgMgr.messageAppend(klineDatas: &self.headerChartView.chartView.klineData, chartItem: msg)
-            self.headerChartView.chartView.chartView.refreshChart(isAll: false,
-                                                                  isDraw: self.headerChartView.chartView.chartView.isActiveRefresh(plotCount: self.headerChartView.chartView.klineData.count))
+            self.headerChartView.chartView.chartView.refreshChart(isAll: false, isDraw: true)
         }
     }
     
@@ -441,11 +460,7 @@ extension KSBinanceController {
                 return
             }
             self.msgMgr.messageAppend(klineDatas: &self.headerChartView.chartView.klineData, chartItem: msg)
-            //if self.msgMgr.isProcessing {
-            self.headerChartView.chartView.chartView.refreshChart(isAll: false,
-                                                                  isDraw: self.headerChartView.chartView.chartView.isActiveRefresh(plotCount: self.headerChartView.chartView.klineData.count))
-            //self.refreshChartKit()
-            //}
+            self.headerChartView.chartView.chartView.refreshChart(isAll: false, isDraw: true)
         }
     }
     

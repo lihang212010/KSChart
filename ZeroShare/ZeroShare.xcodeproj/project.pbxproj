@@ -95,7 +95,6 @@
 		E622D1BB2339DDA700D233E0 /* KSChartStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D1BA2339DDA700D233E0 /* KSChartStyles.swift */; };
 		E622D1BD2339E06300D233E0 /* KSBinanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D1BC2339E06300D233E0 /* KSBinanceController.swift */; };
 		E622D1BF2339F3C000D233E0 /* KSSeriesParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D1BE2339F3C000D233E0 /* KSSeriesParam.swift */; };
-		E622D1C2233A213900D233E0 /* KSMyShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D1C1233A213900D233E0 /* KSMyShareView.swift */; };
 		E622D1C4233A224500D233E0 /* KSMyShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E622D1C3233A224500D233E0 /* KSMyShareController.swift */; };
 		E6AB6E66238BEA5900C9BCF3 /* KSAxisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E4A238BEA5900C9BCF3 /* KSAxisModel.swift */; };
 		E6AB6E67238BEA5900C9BCF3 /* KSCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E4B238BEA5900C9BCF3 /* KSCalculator.swift */; };
@@ -111,7 +110,6 @@
 		E6AB6E72238BEA5900C9BCF3 /* KSBollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E57238BEA5900C9BCF3 /* KSBollModel.swift */; };
 		E6AB6E73238BEA5900C9BCF3 /* KSTimeChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E58238BEA5900C9BCF3 /* KSTimeChartModel.swift */; };
 		E6AB6E74238BEA5900C9BCF3 /* KSChartModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E5B238BEA5900C9BCF3 /* KSChartModel+Extensions.swift */; };
-		E6AB6E75238BEA5900C9BCF3 /* KSKLineChartView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E5C238BEA5900C9BCF3 /* KSKLineChartView+Extensions.swift */; };
 		E6AB6E76238BEA5900C9BCF3 /* KSLineModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E5D238BEA5900C9BCF3 /* KSLineModel+Extensions.swift */; };
 		E6AB6E77238BEA5900C9BCF3 /* KSSection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E5E238BEA5900C9BCF3 /* KSSection+Extensions.swift */; };
 		E6AB6E78238BEA5900C9BCF3 /* KSSeries+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E5F238BEA5900C9BCF3 /* KSSeries+Extensions.swift */; };
@@ -120,13 +118,14 @@
 		E6AB6E7B238BEA5900C9BCF3 /* Double+KSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E63238BEA5900C9BCF3 /* Double+KSExtensions.swift */; };
 		E6AB6E7C238BEA5900C9BCF3 /* String+KSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E64238BEA5900C9BCF3 /* String+KSExtensions.swift */; };
 		E6AB6E7D238BEA5900C9BCF3 /* UIColor+KSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB6E65238BEA5900C9BCF3 /* UIColor+KSExtensions.swift */; };
+		E6CF4D112423A1580029E29F /* 3songshu.txt in Resources */ = {isa = PBXBuildFile; fileRef = E6CF4D102423A1580029E29F /* 3songshu.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		078502BD5C7E716DD24FEE07 /* Pods-ZeroShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeroShare.release.xcconfig"; path = "Target Support Files/Pods-ZeroShare/Pods-ZeroShare.release.xcconfig"; sourceTree = "<group>"; };
 		976229B2BDF5A2CDC61A932A /* Pods-ZeroShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZeroShare.debug.xcconfig"; path = "Target Support Files/Pods-ZeroShare/Pods-ZeroShare.debug.xcconfig"; sourceTree = "<group>"; };
 		C770F7DE7EBA95D21074E78E /* Pods_ZeroShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZeroShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E61E91BE2338EE7C00184885 /* ZeroShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E61E91BE2338EE7C00184885 /* KSChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61E91C12338EE7C00184885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E61E91C32338EE7C00184885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E61E91C62338EE7C00184885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -221,7 +220,6 @@
 		E622D1BA2339DDA700D233E0 /* KSChartStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSChartStyles.swift; sourceTree = "<group>"; };
 		E622D1BC2339E06300D233E0 /* KSBinanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSBinanceController.swift; sourceTree = "<group>"; };
 		E622D1BE2339F3C000D233E0 /* KSSeriesParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSSeriesParam.swift; sourceTree = "<group>"; };
-		E622D1C1233A213900D233E0 /* KSMyShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSMyShareView.swift; sourceTree = "<group>"; };
 		E622D1C3233A224500D233E0 /* KSMyShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSMyShareController.swift; sourceTree = "<group>"; };
 		E6AB6E4A238BEA5900C9BCF3 /* KSAxisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSAxisModel.swift; sourceTree = "<group>"; };
 		E6AB6E4B238BEA5900C9BCF3 /* KSCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSCalculator.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 		E6AB6E57238BEA5900C9BCF3 /* KSBollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSBollModel.swift; sourceTree = "<group>"; };
 		E6AB6E58238BEA5900C9BCF3 /* KSTimeChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTimeChartModel.swift; sourceTree = "<group>"; };
 		E6AB6E5B238BEA5900C9BCF3 /* KSChartModel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KSChartModel+Extensions.swift"; sourceTree = "<group>"; };
-		E6AB6E5C238BEA5900C9BCF3 /* KSKLineChartView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KSKLineChartView+Extensions.swift"; sourceTree = "<group>"; };
 		E6AB6E5D238BEA5900C9BCF3 /* KSLineModel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KSLineModel+Extensions.swift"; sourceTree = "<group>"; };
 		E6AB6E5E238BEA5900C9BCF3 /* KSSection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KSSection+Extensions.swift"; sourceTree = "<group>"; };
 		E6AB6E5F238BEA5900C9BCF3 /* KSSeries+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KSSeries+Extensions.swift"; sourceTree = "<group>"; };
@@ -246,6 +243,7 @@
 		E6AB6E63238BEA5900C9BCF3 /* Double+KSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+KSExtensions.swift"; sourceTree = "<group>"; };
 		E6AB6E64238BEA5900C9BCF3 /* String+KSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KSExtensions.swift"; sourceTree = "<group>"; };
 		E6AB6E65238BEA5900C9BCF3 /* UIColor+KSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+KSExtensions.swift"; sourceTree = "<group>"; };
+		E6CF4D102423A1580029E29F /* 3songshu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3songshu.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +280,7 @@
 		E61E91BF2338EE7C00184885 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E61E91BE2338EE7C00184885 /* ZeroShare.app */,
+				E61E91BE2338EE7C00184885 /* KSChart.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -753,6 +751,7 @@
 		E61E92E42338F46300184885 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6CF4D102423A1580029E29F /* 3songshu.txt */,
 				E61E92E52338F46300184885 /* candles.txt */,
 				E61E92E62338F46300184885 /* depth.json */,
 				E61E92E72338F46300184885 /* ethbtc.txt */,
@@ -781,7 +780,6 @@
 		E622D1C0233A210F00D233E0 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				E622D1C1233A213900D233E0 /* KSMyShareView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -861,7 +859,6 @@
 			isa = PBXGroup;
 			children = (
 				E6AB6E5B238BEA5900C9BCF3 /* KSChartModel+Extensions.swift */,
-				E6AB6E5C238BEA5900C9BCF3 /* KSKLineChartView+Extensions.swift */,
 				E6AB6E5D238BEA5900C9BCF3 /* KSLineModel+Extensions.swift */,
 				E6AB6E5E238BEA5900C9BCF3 /* KSSection+Extensions.swift */,
 				E6AB6E5F238BEA5900C9BCF3 /* KSSeries+Extensions.swift */,
@@ -918,7 +915,7 @@
 			);
 			name = ZeroShare;
 			productName = ZeroShare;
-			productReference = E61E91BE2338EE7C00184885 /* ZeroShare.app */;
+			productReference = E61E91BE2338EE7C00184885 /* KSChart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -972,6 +969,7 @@
 				E61E92F42338F46300184885 /* ethbtc.txt in Resources */,
 				E61E92F62338F46300184885 /* kLineForDay.json in Resources */,
 				E61E92FE2338F46300184885 /* wonbtctrade.txt in Resources */,
+				E6CF4D112423A1580029E29F /* 3songshu.txt in Resources */,
 				E61E91C92338EE7D00184885 /* Assets.xcassets in Resources */,
 				E61E92F82338F46300184885 /* orderbook.txt in Resources */,
 				E61E92FD2338F46300184885 /* wonbtc_kline.txt in Resources */,
@@ -1036,7 +1034,6 @@
 				E61E92D02338F05500184885 /* KSChartIndexView.swift in Sources */,
 				E61E923B2338F00F00184885 /* MarginLabel.swift in Sources */,
 				E61E92662338F00F00184885 /* UIImage+KSExtensions.swift in Sources */,
-				E622D1C2233A213900D233E0 /* KSMyShareView.swift in Sources */,
 				E61E92632338F00F00184885 /* NSObject+KSExtensions.swift in Sources */,
 				E6AB6E70238BEA5900C9BCF3 /* KSSeries.swift in Sources */,
 				E61E92442338F00F00184885 /* KSBaseView.swift in Sources */,
@@ -1053,7 +1050,6 @@
 				E61E92682338F00F00184885 /* UIView+KSExtensions.swift in Sources */,
 				E61E92BD2338F05500184885 /* KSDoubleLabelView.swift in Sources */,
 				E61E92BB2338F05500184885 /* KSOrderBookCell.swift in Sources */,
-				E6AB6E75238BEA5900C9BCF3 /* KSKLineChartView+Extensions.swift in Sources */,
 				E6AB6E78238BEA5900C9BCF3 /* KSSeries+Extensions.swift in Sources */,
 				E6AB6E6B238BEA5900C9BCF3 /* KSDynamicItem.swift in Sources */,
 				E622D1BB2339DDA700D233E0 /* KSChartStyles.swift in Sources */,
@@ -1292,7 +1288,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saeipi.ZeroShare;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KSChart;
 				SWIFT_OBJC_BRIDGING_HEADER = "ZeroShare/Scripts/Objectc/ZeroShare-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1313,7 +1309,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saeipi.ZeroShare;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KSChart;
 				SWIFT_OBJC_BRIDGING_HEADER = "ZeroShare/Scripts/Objectc/ZeroShare-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -24,7 +24,6 @@ class KSKChartView: KSBaseView {
         let style             = configure.loadConfigure()
         chartView.style       = style
         chartView.delegate    = self
-        chartView.extraSetting()
         self.addSubview(chartView)
         return chartView
     }()
@@ -49,11 +48,11 @@ extension KSKChartView: KSKLineChartDelegate {
      
      - returns:
      */
-    func numberOfPointsInKLineChart(chart: KSKLineChartView) -> Int {
+    func numberOfPoints(chart: KSKLineChartView) -> Int {
         return self.klineData.count
     }
     
-    func dataSource(in chart: KSKLineChartView) -> [KSChartItem] {
+    func dataSource(chart: KSKLineChartView) -> [KSChartItem] {
         return klineData
     }
     /**
@@ -115,7 +114,7 @@ extension KSKChartView: KSKLineChartDelegate {
         return configure.decimal
     }
 
-    func widthForYAxisLabelInKLineChart(in chart: KSKLineChartView) -> CGFloat {
+    func widthForYAxisLabelInKLineChart(chart: KSKLineChartView) -> CGFloat {
         return 0
     }
     

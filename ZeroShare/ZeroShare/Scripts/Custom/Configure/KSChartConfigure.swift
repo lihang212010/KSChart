@@ -101,12 +101,12 @@ extension KSChartConfigure {
         style.isInnerYAxis            = styleParams.isInnerYAxis
         style.showYAxisLabel          = KSYAxisShowPosition.none//显示y的位置，默认右边
         style.padding                 = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
-        style.chartTais                = [KSSeriesKey.candle: .none,
+        style.chartTais               = [KSSeriesKey.candle: .none,
                                          KSSeriesKey.timeline: .timeline,
                                          KSSeriesKey.volume: .none,
                                          KSSeriesKey.ma: .ma(5, 10, 30),
                                          KSSeriesKey.ema: .ema(7, 25, 99),
-                                         KSSeriesKey.kdj: .kdj,
+                                         KSSeriesKey.kdj: .kdj(9, 3, 3),
                                          KSSeriesKey.macd: .macd(12, 26, 9),
                                          KSSeriesKey.boll: .boll(20, 2),
                                          KSSeriesKey.rsi: .rsi(6, 12, 24),
@@ -174,7 +174,7 @@ extension KSChartConfigure {
             showGuide: true,
             ultimateValueStyle: .arrow(UIColor(white: 0.8, alpha: 1)))
         priceSeries.showTitle = true
-        priceSeries.chartModels.first?.ultimateValueStyle = .line(UIColor(white: 0.8, alpha: 1))
+        priceSeries.chartModels.first?.ultimateValueStyle = .tag(UIColor(white: 0.8, alpha: 1))
         
         priceSection.series.append(timelineSeries)
         priceSection.series.append(priceSeries)

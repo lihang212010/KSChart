@@ -8,14 +8,15 @@
 
 import UIKit
 
-public class KSZeroChartView: KSKLineChartView {
+class KSZeroChartView: KSKLineChartView {
 
-    private var minPlotCount: Int = 20//最小蜡烛数量
-    
     /// 设置选中的数据点,并回调
     ///
     /// - Parameter index: 选中位置
     override func setSelectedByIndex(_ index: Int) {
+        if index >= self.datas.count {
+            return
+        }
         //如果不在区间内return
         guard index >= self.rangeFrom && index < self.rangeTo else {
             return
@@ -30,7 +31,8 @@ public class KSZeroChartView: KSKLineChartView {
     ///
     /// - Parameter sender: 手势
     override func doPanAction(_ sender: UIPanGestureRecognizer) {
-        if (self.delegate?.numberOfPointsInKLineChart(chart: self) ?? 0) < self.minPlotCount {
+        //防止数量较少时,显示异常
+        if self.plotCount < self.minCandleCount {
             return
         }
         super.doPanAction(sender)
@@ -44,7 +46,7 @@ public class KSZeroChartView: KSKLineChartView {
         super.doLongPressAction(sender)
         
         self.buildSections {(section, index) in
-            //绘制顶部指标
+            //绘制顶部技术指标,例如:BOOL:0.0251 UB:0.0252 LB:0.0250
             section.drawCustomTitle(self.selectedIndex)
         }
         
@@ -60,7 +62,7 @@ public class KSZeroChartView: KSKLineChartView {
     ///
     /// - Parameter sender: 手势
     @objc override func doPinchAction(_ sender: UIPinchGestureRecognizer) {
-        if (self.delegate?.numberOfPointsInKLineChart(chart: self) ?? 0) < self.minPlotCount {
+        if self.plotCount < self.minCandleCount {
             return
         }
         super.doPinchAction(sender)
@@ -74,7 +76,6 @@ public class KSZeroChartView: KSKLineChartView {
         if !serie.hidden {
             //循环画出每个模型的线
             for model in serie.chartModels {
-                //model.isPinch  = self.isPinch
                 let serieLayer = model.drawSerie(self.rangeFrom, endIndex: self.rangeTo)
                 serie.seriesLayer.addSublayer(serieLayer)
             }
@@ -197,11 +198,16 @@ public class KSZeroChartView: KSKLineChartView {
                 self.delegate?.kLineChart?(chart: self, viewOfYAxis: self.selectedXAxisLabel!, viewOfXAxis: self.selectedYAxisLabel!)
                 
                 self.showSelection = true
-                
+                if self.isCrosshair {
+                    self.sightView?.center     = CGPoint(x: hx, y: vy)
+                }
                 self.bringSubviewToFront(self.verticalLineView!)
                 self.bringSubviewToFront(self.horizontalLineView!)
                 self.bringSubviewToFront(self.selectedXAxisLabel!)
                 self.bringSubviewToFront(self.selectedYAxisLabel!)
+                if self.isCrosshair {
+                    self.bringSubviewToFront(self.sightView!)
+                }
 
                 //设置选中点
                 self.setSelectedByIndex(i)
@@ -215,9 +221,7 @@ public class KSZeroChartView: KSKLineChartView {
         self.showSelection = false
         self.delegate?.kLineChart?(chart: self, displayCross: false)
     }
-}
 
-extension KSZeroChartView {
     /// 通过CALayer方式画图表
     override func drawLayerView() {
         //先清空图层
@@ -252,7 +256,7 @@ extension KSZeroChartView {
                 self.drawLayer.addSublayer(section.titleLayer)//[绘制最顶部价格/指标值等数据]
                 
                 //绘制顶部指标
-                if showSelection == false {
+                if self.showSelection == false {
                     if self.datas.count > 0 {
                         self.selectedIndex = self.datas.count - 1
                     }
@@ -263,38 +267,6 @@ extension KSZeroChartView {
             let showXAxisSection = self.getSecionWhichShowXAxis()
             //显示在分区下面绘制X轴坐标[底部时间]
             self.drawXAxisLabel(showXAxisSection, xAxisToDraw: xAxisToDraw)
-            
-            //重新显示点击选中的坐标
-            /*
-            if self.showSelection {
-                self.setSelectedIndexByPoint(self.selectedPoint)
-            }
-            self.delegate?.didFinishKLineChartRefresh?(chart: self)
-            */
         }
     }
 }
-
-// MARK: - 额为的初始化方法
-extension KSZeroChartView {
-    /// 设置style后，方可调用
-    public func extraSetting() {
-        
-        self.isCrosshair                         = false
-        self.showSelection                       = false
-        //self.animator.delegate                 = self
-        //重置文字颜色和字体
-        self.selectedYAxisLabel?.font            = self.labelFont
-        self.selectedYAxisLabel?.backgroundColor = self.selectedBGColor
-        self.selectedYAxisLabel?.textColor       = self.selectedTextColor
-        self.selectedXAxisLabel?.font            = self.labelFont
-        self.selectedXAxisLabel?.backgroundColor = self.selectedBGColor
-        self.selectedXAxisLabel?.textColor       = self.selectedTextColor
-    }
-}
-
-//extension KSZeroChartView: UIDynamicAnimatorDelegate {
-//    public func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
-//
-//    }
-//}
